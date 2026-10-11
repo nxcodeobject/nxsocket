@@ -183,6 +183,8 @@ img { max-width: 100%; display: block; }
 .dl-os { font-weight: 700; font-size: 1.05rem; color: var(--text); }
 .dl-file { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); }
 .dl-meta { color: var(--muted); font-size: 0.8rem; }
+.dl-usage { text-align: center; margin: 20px auto 0; max-width: 640px; color: var(--muted); font-size: 0.9rem; }
+.dl-usage code { color: var(--text); }
 .dl-note { text-align: center; margin-top: 20px; font-size: 0.9rem; }
 
 /* Steps */

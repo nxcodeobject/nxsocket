@@ -26,7 +26,7 @@ logo.svg     logo (salinan dari public/icons/nxsocket.svg)
 3. Modul — chip 21 modul (chat, presence, WebRTC, meeting, SFU, AI, OTP, FCM, …)
 4. Arsitektur — alur Client → Gateway → Server + diagram
 5. Demo browser — 14 tautan ke `http://127.0.0.1:7080` (`/v1/demo` … `/v1/demo12`, `/v1/otp`, `/v1/qr`)
-6. Unduh NxSocket — 2 kartu binary standalone (Windows `.exe` + Linux x64) dari GitHub Releases + tautan semua rilis
+6. Unduh NxSocket — 2 kartu binary standalone (Windows `.exe` + Linux x64) dari GitHub Releases + catatan cara pakai (jalan tanpa Node.js, `.env` opsional di folder kerja) + tautan semua rilis
 7. Cara mulai — 4 langkah (install/build/link → gateway info → server → buka demo)
 8. Client API + tabel event protokol
 9. Perintah CLI (server & gateway/token)
