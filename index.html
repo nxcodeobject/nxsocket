@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="meta.title">NxSocket — Platform WebSocket untuk fitur realtime</title>
+  <meta name="description" content="NxSocket — CLI dan platform WebSocket untuk membangun fitur realtime: chat, panggilan suara/video, AI streaming, tracking, notifikasi." data-i18n-attr="content|meta.desc" />
+  <meta name="theme-color" content="#0a1310" />
+  <link rel="icon" href="logo.svg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NxSocket — Platform WebSocket untuk fitur realtime" />
+  <meta property="og:description" content="Chat, panggilan suara/video, AI streaming, tracking, notifikasi — semua modul realtime dalam satu gateway." />
+  <meta property="og:image" content="logo.svg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">
+        <img src="logo.svg" alt="Logo NxSocket" class="logo" />
+        <span>NxSocket</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#fitur" data-i18n="nav.fitur">Fitur</a>
+        <a href="#modul" data-i18n="nav.modul">Modul</a>
+        <a href="#arsitektur" data-i18n="nav.arsitektur">Arsitektur</a>
+        <a href="#demo" data-i18n="nav.demo">Demo</a>
+        <a href="#mulai" data-i18n="nav.mulai">Cara Mulai</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-ghost" href="https://github.com/sponsors/iyanrsaleh" target="_blank" rel="noopener" style="color: #db61a2; border-color: transparent; display: inline-flex; align-items: center; gap: 6px;">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25z"></path></svg>
+          Sponsor
+        </a>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang-btn="id" class="active">ID</button>
+          <button type="button" data-lang-btn="en">EN</button>
+        </div>
+        <a class="btn btn-primary btn-sm" href="#mulai" data-i18n="nav.mulaiBtn">Coba Sekarang</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.badge">nxsocket v0.2.0 · Node.js ≥ 22 · MIT</p>
+          <h1 data-i18n-html="hero.title">Fitur <span class="accent">realtime</span> dari satu gateway</h1>
+          <p class="lede" data-i18n-html="hero.desc">
+            <strong>NxSocket</strong> — CLI dan platform WebSocket untuk membangun
+            chat, panggilan suara/video, AI streaming, tracking, dan notifikasi.
+            Satu server, satu token, semua modul siap pakai.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#mulai" data-i18n="hero.cta1">Mulai dalam 15 menit</a>
+            <a class="btn btn-ghost" href="#modul" data-i18n="hero.cta2">Lihat modul</a>
+          </div>
+          <div class="install-box">
+            <code id="install-cmd">npm install &amp;&amp; npm run build &amp;&amp; npm link</code>
+            <button class="copy-btn" id="copy-install"><span data-i18n="install.copy">Copy</span></button>
+          </div>
+          <p class="hero-note" data-i18n="hero.note">Lalu: nxsocket server — dan semua demo siap dibuka.</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="term">
+            <div class="term-bar"><span></span><span></span><span></span><em>terminal</em></div>
+            <pre class="term-body"><span class="t-dim">$</span> <span class="t-cmd">nxsocket gateway info</span>
+<span class="t-accent">NxSocket Gateway</span>
+<span class="t-dim">Lokal</span>    http://127.0.0.1:7080/v1
+<span class="t-dim">Jaringan</span> http://192.168.100.80:7080/v1
+<span class="t-dim">Token</span>    c6f4d38c…722f5d
+
+<span class="t-dim">$</span> <span class="t-cmd">nxsocket server</span>
+<span class="t-ok">✓</span> gateway listen 0.0.0.0:7080 <span class="t-dim">path /v1</span>
+<span class="t-ok">✓</span> adapter sqlite <span class="t-dim">data/nxsocket.sqlite</span>
+<span class="t-ok">✓</span> demo  /v1/demo  /v1/demo2 … /v1/demo12
+
+<span class="t-dim">↑ heartbeat 15s · timeout 45s · rate limit 60/10s</span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FITUR -->
+    <section class="why" id="fitur">
+      <div class="container">
+        <h2 data-i18n="fit.title">Kenapa NxSocket?</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">⟡</div>
+            <h3 data-i18n="fit.1t">20+ modul siap pakai</h3>
+            <p data-i18n="fit.1d">Chat, presence, notifikasi, tracking, AI, terminal, WebRTC, meeting, feed, grup, OTP, media — tanpa membangun dari nol.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🛡</div>
+            <h3 data-i18n="fit.2t">Gateway token</h3>
+            <p data-i18n="fit.2d">Akses lewat Endpoint Gateway dengan token per-user: expiry, scope, dan ACL room. Bisa di-regenerate atau dicabut.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">⇄</div>
+            <h3 data-i18n="fit.3t">Koneksi yang tahan putus</h3>
+            <p data-i18n="fit.3d">Heartbeat, reconnect, dan session resume — client kembali ke room yang sama tanpa memulai ulang percakapan.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🗄</div>
+            <h3 data-i18n="fit.4t">Adapter data fleksibel</h3>
+            <p data-i18n="fit.4d">SQLite (default, lokal), Firebase (cloud), atau JSON ringan. Ganti lewat satu flag CLI atau environment variable.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">🎥</div>
+            <h3 data-i18n="fit.5t">Suara & video</h3>
+            <p data-i18n="fit.5d">Panggilan 1:1, grup mesh, sampai meeting skala besar via SFU LiveKit. Signaling WebRTC sudah termasuk.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">⌘</div>
+            <h3 data-i18n="fit.6t">Uji langsung dari HP</h3>
+            <p data-i18n="fit.6d">Server HTTPS self-signed + QR di terminal. Scan dari HP, mic dan kamera langsung jalan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODUL -->
+    <section class="modules" id="modul">
+      <div class="container">
+        <h2 data-i18n="mod.title">Modul</h2>
+        <p class="mod-sub" data-i18n="mod.sub">Semua modul ini sudah tersedia dan siap dipakai di aplikasi Anda.</p>
+        <div class="mod-grid">
+          <span class="chip" data-i18n="mod.chat">Chat <em>read receipt</em></span>
+          <span class="chip" data-i18n="mod.presence">Presence</span>
+          <span class="chip" data-i18n="mod.notif">Notification</span>
+          <span class="chip" data-i18n="mod.webrtc">WebRTC 1:1</span>
+          <span class="chip" data-i18n="mod.meeting">Meeting mesh</span>
+          <span class="chip" data-i18n="mod.sfu">SFU LiveKit</span>
+          <span class="chip" data-i18n="mod.ai">AI streaming</span>
+          <span class="chip" data-i18n="mod.terminal">Terminal</span>
+          <span class="chip" data-i18n="mod.tracking">Tracking</span>
+          <span class="chip" data-i18n="mod.monitoring">Monitoring</span>
+          <span class="chip" data-i18n="mod.progress">Progress</span>
+          <span class="chip" data-i18n="mod.job">Job</span>
+          <span class="chip" data-i18n="mod.sync">Sync</span>
+          <span class="chip" data-i18n="mod.feed">Feed</span>
+          <span class="chip" data-i18n="mod.groups">Groups &amp; DM</span>
+          <span class="chip" data-i18n="mod.media">Media</span>
+          <span class="chip" data-i18n="mod.blocks">Blocks</span>
+          <span class="chip" data-i18n="mod.profile">Profile</span>
+          <span class="chip" data-i18n="mod.otp">OTP</span>
+          <span class="chip" data-i18n="mod.push">Web Push</span>
+          <span class="chip" data-i18n="mod.fcm">FCM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARSITEKTUR -->
+    <section class="arch" id="arsitektur">
+      <div class="container arch-grid">
+        <div>
+          <p class="eyebrow" data-i18n="arch.badge">Arsitektur</p>
+          <h2 class="arch-title" data-i18n="arch.title">Client tidak menyentuh server secara langsung</h2>
+          <p class="arch-lede" data-i18n="arch.lede">
+            Semua akses masuk melalui <strong>Endpoint Gateway</strong> — validasi
+            token, lalu diteruskan ke NxSocket Server yang mengelola koneksi,
+            session, room, dan event.
+          </p>
+          <ul class="arch-list">
+            <li data-i18n="arch.1">Token per-user dengan scope dan expiry</li>
+            <li data-i18n="arch.2">ACL room — client hanya boleh masuk room yang diizinkan</li>
+            <li data-i18n="arch.3">Adapter SQLite / Firebase / JSON untuk penyimpanan</li>
+            <li data-i18n="arch.4">Rate limit per koneksi (default 60 pesan / 10 detik)</li>
+          </ul>
+        </div>
+        <pre class="arch-diagram">┌──────────────────────┐
+│   NxSocket Client    │
+└──────────┬───────────┘
+           │  WebSocket / HTTP
+           ▼
+┌──────────────────────┐
+│  Endpoint Gateway    │  <span class="t-ok">token · scope · ACL</span>
+└──────────┬───────────┘
+           ▼
+┌──────────────────────┐
+│   NxSocket Server    │  <span class="t-dim">session · room · event</span>
+└──────────┬───────────┘
+     ┌─────┴─────┐
+     ▼           ▼
+ <span class="t-dim">Database</span>    <span class="t-dim">Features</span>
+ </pre>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section class="demos" id="demo">
+      <div class="container">
+        <h2 data-i18n="dm.title">Demo browser</h2>
+        <p class="mod-sub" data-i18n="dm.sub">Buka di browser setelah nxsocket server berjalan — semua halaman demo siap pakai.</p>
+        <div class="dm-grid">
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo"><span class="dm-path">/v1/demo</span><span class="dm-name" data-i18n="dm.1">Chat &amp; presence</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo2"><span class="dm-path">/v1/demo2</span><span class="dm-name" data-i18n="dm.2">Telepon suara</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo3"><span class="dm-path">/v1/demo3</span><span class="dm-name" data-i18n="dm.3">Video call</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo4"><span class="dm-path">/v1/demo4</span><span class="dm-name" data-i18n="dm.4">AI streaming</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo5"><span class="dm-path">/v1/demo5</span><span class="dm-name" data-i18n="dm.5">Remote AI control</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo6"><span class="dm-path">/v1/demo6</span><span class="dm-name" data-i18n="dm.6">Tracking posisi</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo7"><span class="dm-path">/v1/demo7</span><span class="dm-name" data-i18n="dm.7">Progress / job / sync</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo8"><span class="dm-path">/v1/demo8</span><span class="dm-name" data-i18n="dm.8">Group video call</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo9"><span class="dm-path">/v1/demo9</span><span class="dm-name" data-i18n="dm.9">Meeting (mesh)</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo10"><span class="dm-path">/v1/demo10</span><span class="dm-name" data-i18n="dm.10">SFU meeting (LiveKit)</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo11"><span class="dm-path">/v1/demo11</span><span class="dm-name" data-i18n="dm.11">Social feed</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/demo12"><span class="dm-path">/v1/demo12</span><span class="dm-name" data-i18n="dm.12">Groups &amp; DM</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/otp"><span class="dm-path">/v1/otp</span><span class="dm-name" data-i18n="dm.13">OTP request / verify</span></a>
+          <a class="dm" href="http://127.0.0.1:7080/v1/qr"><span class="dm-path">/v1/qr</span><span class="dm-name" data-i18n="dm.14">QR token</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARA MULAI -->
+    <section class="start" id="mulai">
+      <div class="container">
+        <h2 data-i18n="st.title">Cara mulai</h2>
+        <ol class="steps">
+          <li>
+            <h3 data-i18n="st.1t">Pasang CLI</h3>
+            <pre><code>cd D:\Framework\CLI\NxSocket
+npm install
+npm run build
+npm link</code></pre>
+            <p class="step-alt" data-i18n-html="st.1a">Setelah mengubah kode, jalankan <code>npm run build</code> lagi.</p>
+          </li>
+          <li>
+            <h3 data-i18n="st.2t">Lihat endpoint &amp; token</h3>
+            <pre><code>nxsocket gateway info</code></pre>
+            <p class="step-alt" data-i18n="st.2a">Menampilkan URL lokal, URL jaringan, dan token gateway.</p>
+          </li>
+          <li>
+            <h3 data-i18n="st.3t">Jalankan server</h3>
+            <pre><code>nxsocket server
+nxsocket server --https   # mic & kamera di HP</code></pre>
+            <p class="step-alt" data-i18n="st.3a">Default: port 7080, path /v1, adapter SQLite.</p>
+          </li>
+          <li>
+            <h3 data-i18n="st.4t">Buka demo</h3>
+            <pre><code>http://127.0.0.1:7080/v1/demo</code></pre>
+            <p class="step-alt" data-i18n-html="st.4a">Atau uji semua modul dari CLI: <code>npm run example:demo</code>.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CLIENT + PROTOCOL -->
+    <section class="client">
+      <div class="container client-grid">
+        <div>
+          <h2 class="client-title" data-i18n="cl.title">Client API</h2>
+          <pre class="code-block"><code>import { NxSocketClient } from "nxsocket";
+
+const client = new NxSocketClient({
+  url: "http://127.0.0.1:7080/v1",
+  token: "&lt;gateway-token&gt;",
+  reconnect: true,
+});
+
+client.on("welcome", (sessionId) =&gt; {
+  client.join("lobby");
+  client.broadcast("lobby", "chat", { text: "halo" });
+});
+
+client.connect();</code></pre>
+        </div>
+        <div>
+          <h2 class="client-title" data-i18n="cl.protoTitle">Event protokol</h2>
+          <div class="proto-table">
+            <div class="pr"><span>presence</span><em>subscribe · update · snapshot</em></div>
+            <div class="pr"><span>chat</span><em>send · message · typing · receipt · read</em></div>
+            <div class="pr"><span>notification</span><em>send · notification</em></div>
+            <div class="pr"><span>ai</span><em>start · chunk · done · cancel</em></div>
+            <div class="pr"><span>terminal</span><em>exec · output · exit</em></div>
+            <div class="pr"><span>webrtc</span><em>signal (offer · answer · ICE)</em></div>
+            <div class="pr"><span>tracking</span><em>subscribe · update · snapshot</em></div>
+            <div class="pr"><span>progress · job · sync</span><em>update · snapshot · done</em></div>
+          </div>
+          <p class="proto-note" data-i18n="cl.protoNote">Detail lengkap ada di PROTOCOL.md.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLI -->
+    <section class="cli">
+      <div class="container">
+        <h2 data-i18n="cli.title">Perintah CLI</h2>
+        <div class="cli-grid">
+          <div class="cli-card">
+            <h3 data-i18n="cli.srv">Server</h3>
+            <pre><code>nxsocket server
+nxsocket server --port 3090 --host 127.0.0.1
+nxsocket server --adapter sqlite
+nxsocket server --adapter firebase</code></pre>
+          </div>
+          <div class="cli-card">
+            <h3 data-i18n="cli.gw">Gateway &amp; token</h3>
+            <pre><code>nxsocket gateway info
+nxsocket gateway qr
+nxsocket gateway token create --label alice --expires 7d
+nxsocket gateway token list
+nxsocket gateway token regenerate &lt;id&gt;
+nxsocket gateway token revoke &lt;id&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+      <div class="container faq-wrap">
+        <h2 data-i18n="faq.title">Pertanyaan umum</h2>
+        <details>
+          <summary data-i18n="faq.1q">Butuh Node.js versi berapa?</summary>
+          <p data-i18n="faq.1a">Node.js 22 atau lebih baru.</p>
+        </details>
+        <details>
+          <summary data-i18n-html="faq.2q">Port 7080 sudah dipakai (EADDRINUSE)?</summary>
+          <p data-i18n-html="faq.2a">Matikan proses lama atau ganti port: <code>nxsocket server --port 3090</code>.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.3q">Connect gagal dengan 401?</summary>
+          <p data-i18n="faq.3a">Token salah, sudah di-regenerate, atau di-revoke. Buat/ambil token baru lewat nxsocket gateway token list.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.4q">Token berbeda tiap folder?</summary>
+          <p data-i18n-html="faq.4a">Folder <code>data/</code> mengikuti direktori kerja (cwd). Samakan dengan flag <code>--data-dir</code> atau jalankan dari folder proyek yang sama.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.5q">Panggilan tersambung tapi tidak ada suara?</summary>
+          <p data-i18n="faq.5a">Pakai nxsocket server --https (bukan HTTP), izinkan mic di kedua perangkat, lalu ketuk tombol "Aktifkan suara" di halaman.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.6q">Bisa diakses dari luar rumah?</summary>
+          <p data-i18n="faq.6a">Ya — lewat Cloudflare Tunnel (npm run tunnel), Tailscale, atau reverse proxy seperti Caddy/Nginx di depannya.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="Logo NxSocket" class="logo" />
+        <div>
+          <strong>NxSocket</strong>
+          <p data-i18n="foot.slogan">Nusantara eXtreme Development Object Model</p>
+        </div>
+      </div>
+      <nav class="footer-links">
+        <a href="https://github.com/nxdevmodel" target="_blank" rel="noopener" data-i18n="foot.link1">GitHub</a>
+        <a href="https://github.com/sponsors/iyanrsaleh" target="_blank" rel="noopener" class="text-pink" data-i18n="foot.link2">Sponsor</a>
+      </nav>
+      <p class="footer-copy" data-i18n="foot.copy">MIT License · © 2026 NxSocket</p>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
