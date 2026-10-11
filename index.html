@@ -249,68 +249,6 @@ nxsocket server --https   # mic & kamera di HP</code></pre>
       </div>
     </section>
 
-    <!-- CLIENT + PROTOCOL -->
-    <section class="client">
-      <div class="container client-grid">
-        <div>
-          <h2 class="client-title" data-i18n="cl.title">Client API</h2>
-          <pre class="code-block"><code>import { NxSocketClient } from "nxsocket";
-
-const client = new NxSocketClient({
-  url: "http://127.0.0.1:7080/v1",
-  token: "&lt;gateway-token&gt;",
-  reconnect: true,
-});
-
-client.on("welcome", (sessionId) =&gt; {
-  client.join("lobby");
-  client.broadcast("lobby", "chat", { text: "halo" });
-});
-
-client.connect();</code></pre>
-        </div>
-        <div>
-          <h2 class="client-title" data-i18n="cl.protoTitle">Event protokol</h2>
-          <div class="proto-table">
-            <div class="pr"><span>presence</span><em>subscribe · update · snapshot</em></div>
-            <div class="pr"><span>chat</span><em>send · message · typing · receipt · read</em></div>
-            <div class="pr"><span>notification</span><em>send · notification</em></div>
-            <div class="pr"><span>ai</span><em>start · chunk · done · cancel</em></div>
-            <div class="pr"><span>terminal</span><em>exec · output · exit</em></div>
-            <div class="pr"><span>webrtc</span><em>signal (offer · answer · ICE)</em></div>
-            <div class="pr"><span>tracking</span><em>subscribe · update · snapshot</em></div>
-            <div class="pr"><span>progress · job · sync</span><em>update · snapshot · done</em></div>
-          </div>
-          <p class="proto-note" data-i18n="cl.protoNote">Detail lengkap ada di PROTOCOL.md.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLI -->
-    <section class="cli">
-      <div class="container">
-        <h2 data-i18n="cli.title">Perintah CLI</h2>
-        <div class="cli-grid">
-          <div class="cli-card">
-            <h3 data-i18n="cli.srv">Server</h3>
-            <pre><code>nxsocket server
-nxsocket server --port 3090 --host 127.0.0.1
-nxsocket server --adapter sqlite
-nxsocket server --adapter firebase</code></pre>
-          </div>
-          <div class="cli-card">
-            <h3 data-i18n="cli.gw">Gateway &amp; token</h3>
-            <pre><code>nxsocket gateway info
-nxsocket gateway qr
-nxsocket gateway token create --label alice --expires 7d
-nxsocket gateway token list
-nxsocket gateway token regenerate &lt;id&gt;
-nxsocket gateway token revoke &lt;id&gt;</code></pre>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="faq" id="faq">
       <div class="container faq-wrap">

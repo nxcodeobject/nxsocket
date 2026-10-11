@@ -28,10 +28,8 @@ logo.svg     logo (salinan dari public/icons/nxsocket.svg)
 5. Demo browser — 14 tautan ke `http://127.0.0.1:7080` (`/v1/demo` … `/v1/demo12`, `/v1/otp`, `/v1/qr`)
 6. Unduh NxSocket — 2 kartu binary standalone (Windows `.exe` + Linux x64) dari GitHub Releases + catatan cara pakai (jalan tanpa Node.js, `.env` opsional di folder kerja) + tautan semua rilis
 7. Cara mulai — 4 langkah (unduh binary → gateway info → server → buka demo)
-8. Client API + tabel event protokol
-9. Perintah CLI (server & gateway/token)
-10. FAQ — 6 pertanyaan umum + troubleshooting
-11. Footer — GitHub, Sponsor
+8. FAQ — 6 pertanyaan umum + troubleshooting
+9. Footer — GitHub, Sponsor
 
 ## Catatan
 
@@ -61,3 +59,7 @@ logo.svg     logo (salinan dari public/icons/nxsocket.svg)
   dev): membuang `install-box` (`npm install && npm run build && npm link`) di hero
   beserta tombol copy-nya, mengganti langkah "Pasang CLI" menjadi "Unduh binary", dan
   menghapus `npm run example:demo` / `npm run tunnel` dari teks. ✅ SUDAH DIEKSEKUSI
+- **Pembersihan lanjutan**: section **Client API / Event protokol** dan **Perintah CLI**
+  dihapus dari `index.html`; kamus `cl.*` / `cli.*` dibuang dari `index.js`; CSS
+  `.client` / `.client-grid` / `.client-title` / `.code-block` / `.proto-*` / `.pr` /
+  `.cli-*` dihapus dari `style.css` (termasuk penyesuaian media query). ✅ SUDAH DIEKSEKUSI

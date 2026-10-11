@@ -200,38 +200,13 @@ img { max-width: 100%; display: block; }
   display: grid; place-items: center; border-radius: 50%;
   background: var(--accent-strong); color: #04140c; font-size: 0.9rem; font-weight: 700;
 }
-.steps pre, .code-block {
+.steps pre {
   background: var(--bg); border: 1px solid var(--line); border-radius: 10px;
   padding: 12px 16px; overflow-x: auto; margin: 12px 0 0; font-size: 0.85rem;
 }
-.steps pre code, .code-block code { color: var(--ok); }
+.steps pre code { color: var(--ok); }
 .step-alt { color: var(--muted); font-size: 0.85rem; margin: 10px 0 0; }
 .step-alt code { color: var(--text); }
-
-/* Client + protocol */
-.client { background: var(--bg-soft); }
-.client-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
-.client-title { text-align: left; font-size: 1.3rem; margin-bottom: 16px; }
-.code-block { margin: 0; }
-.proto-table { display: grid; gap: 8px; }
-.pr {
-  display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
-  background: var(--panel); border: 1px solid var(--line);
-  border-radius: 10px; padding: 10px 14px; font-size: 0.9rem;
-}
-.pr span { font-family: var(--mono); color: var(--accent); }
-.pr em { font-style: normal; color: var(--muted); font-size: 0.8rem; text-align: right; }
-.proto-note { color: var(--muted); font-size: 0.85rem; margin-top: 12px; }
-
-/* CLI */
-.cli-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.cli-card {
-  background: var(--panel); border: 1px solid var(--line);
-  border-radius: var(--radius); padding: 22px;
-}
-.cli-card h3 { color: var(--accent); font-size: 1rem; }
-.cli-card pre { margin: 0; overflow-x: auto; font-size: 0.83rem; line-height: 1.7; }
-.cli-card code { color: var(--muted); }
 
 /* FAQ */
 .faq { background: var(--bg-soft); }
@@ -260,8 +235,8 @@ details code { color: var(--text); }
 
 /* Responsive */
 @media (max-width: 880px) {
-  .hero-grid, .arch-grid, .client-grid, .cli-grid { grid-template-columns: 1fr; }
-  .arch-title, .client-title { text-align: left; }
+  .hero-grid, .arch-grid { grid-template-columns: 1fr; }
+  .arch-title { text-align: left; }
   .nav-links { display: none; }
   .footer-links { margin-left: 0; }
 }
