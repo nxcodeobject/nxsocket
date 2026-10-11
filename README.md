@@ -5,6 +5,7 @@ Landing page promosi **NxSocket** (CLI + platform WebSocket untuk fitur realtime
 ## Repo & URL
 
 - **Repo GitHub**: https://github.com/nxcodeobject/nxsocket
+- **Live (GitHub Pages)**: https://nxcodeobject.github.io/nxsocket/ — Pages source: branch `main`, path `/` (root); semua file web HARUS tetap di root repo ini.
 - **Folder kerja**: `D:\Framework\CLI\NxSocket\website\`
 - **Pratinjau lokal**: http://localhost:8088/
 - **Proyek induk (source)**: `D:\Framework\CLI\NxSocket\` (TypeScript, CLI `nxsocket`)
@@ -53,3 +54,6 @@ logo.svg     logo (salinan dari public/icons/nxsocket.svg)
   `.dl-meta` ditambah di `style.css`. ✅ SUDAH DIEKSEKUSI
 - Repo GitHub `nxcodeobject/nxsocket` disiapkan untuk memuat folder `website/` ini
   sebagai root situs (statis, tanpa build step) sekaligus menampung aset rilis binary.
+- **GitHub Pages diaktifkan** (branch `main`, path `/`) → live di
+  https://nxcodeobject.github.io/nxsocket/ ; ditambahkan `link rel=canonical` +
+  `og:url` di `index.html` dan URL live dicatat di README ini. ✅ SUDAH DIEKSEKUSI
