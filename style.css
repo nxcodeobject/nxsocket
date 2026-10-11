@@ -171,6 +171,20 @@ img { max-width: 100%; display: block; }
 .dm-path { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); }
 .dm-name { font-size: 0.95rem; color: var(--text); }
 
+/* Download */
+.dl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 780px; margin: 0 auto; }
+.dl {
+  display: flex; flex-direction: column; gap: 4px;
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.dl:hover { border-color: var(--accent); transform: translateY(-2px); text-decoration: none; }
+.dl-os { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+.dl-file { font-family: var(--mono); font-size: 0.8rem; color: var(--accent); }
+.dl-meta { color: var(--muted); font-size: 0.8rem; }
+.dl-note { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+
 /* Steps */
 .start { padding-top: 72px; }
 .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; max-width: 760px; margin-inline: auto; }

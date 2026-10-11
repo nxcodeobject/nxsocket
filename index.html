@@ -25,6 +25,7 @@
         <a href="#modul" data-i18n="nav.modul">Modul</a>
         <a href="#arsitektur" data-i18n="nav.arsitektur">Arsitektur</a>
         <a href="#demo" data-i18n="nav.demo">Demo</a>
+        <a href="#unduh" data-i18n="nav.dl">Unduh</a>
         <a href="#mulai" data-i18n="nav.mulai">Cara Mulai</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
@@ -56,6 +57,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#mulai" data-i18n="hero.cta1">Mulai dalam 15 menit</a>
+            <a class="btn btn-ghost" href="#unduh" data-i18n="hero.cta3">Unduh binary</a>
             <a class="btn btn-ghost" href="#modul" data-i18n="hero.cta2">Lihat modul</a>
           </div>
           <div class="install-box">
@@ -191,27 +193,26 @@
       </div>
     </section>
 
-    <!-- DEMO -->
-    <section class="demos" id="demo">
+
+
+    <!-- UNDUH -->
+    <section class="download" id="unduh">
       <div class="container">
-        <h2 data-i18n="dm.title">Demo browser</h2>
-        <p class="mod-sub" data-i18n="dm.sub">Buka di browser setelah nxsocket server berjalan — semua halaman demo siap pakai.</p>
-        <div class="dm-grid">
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo"><span class="dm-path">/v1/demo</span><span class="dm-name" data-i18n="dm.1">Chat &amp; presence</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo2"><span class="dm-path">/v1/demo2</span><span class="dm-name" data-i18n="dm.2">Telepon suara</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo3"><span class="dm-path">/v1/demo3</span><span class="dm-name" data-i18n="dm.3">Video call</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo4"><span class="dm-path">/v1/demo4</span><span class="dm-name" data-i18n="dm.4">AI streaming</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo5"><span class="dm-path">/v1/demo5</span><span class="dm-name" data-i18n="dm.5">Remote AI control</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo6"><span class="dm-path">/v1/demo6</span><span class="dm-name" data-i18n="dm.6">Tracking posisi</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo7"><span class="dm-path">/v1/demo7</span><span class="dm-name" data-i18n="dm.7">Progress / job / sync</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo8"><span class="dm-path">/v1/demo8</span><span class="dm-name" data-i18n="dm.8">Group video call</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo9"><span class="dm-path">/v1/demo9</span><span class="dm-name" data-i18n="dm.9">Meeting (mesh)</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo10"><span class="dm-path">/v1/demo10</span><span class="dm-name" data-i18n="dm.10">SFU meeting (LiveKit)</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo11"><span class="dm-path">/v1/demo11</span><span class="dm-name" data-i18n="dm.11">Social feed</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/demo12"><span class="dm-path">/v1/demo12</span><span class="dm-name" data-i18n="dm.12">Groups &amp; DM</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/otp"><span class="dm-path">/v1/otp</span><span class="dm-name" data-i18n="dm.13">OTP request / verify</span></a>
-          <a class="dm" href="http://127.0.0.1:7080/v1/qr"><span class="dm-path">/v1/qr</span><span class="dm-name" data-i18n="dm.14">QR token</span></a>
+        <h2 data-i18n="dl.title">Unduh NxSocket</h2>
+        <p class="mod-sub" data-i18n="dl.sub">Pakai binary standalone — tanpa perlu memasang Node.js.</p>
+        <div class="dl-grid">
+          <a class="dl" href="https://github.com/nxcodeobject/nxsocket/releases/download/v0.2.0/nxsocket-win-x64.exe" rel="noopener">
+            <span class="dl-os" data-i18n="dl.win">Windows</span>
+            <span class="dl-file">nxsocket-win-x64.exe</span>
+            <span class="dl-meta" data-i18n="dl.winMeta">Windows 10/11 x64 · ±130 MB</span>
+          </a>
+          <a class="dl" href="https://github.com/nxcodeobject/nxsocket/releases/download/v0.2.0/nxsocket-linux-x64" rel="noopener">
+            <span class="dl-os" data-i18n="dl.linux">Linux</span>
+            <span class="dl-file">nxsocket-linux-x64</span>
+            <span class="dl-meta" data-i18n="dl.linuxMeta">Linux x64 (ELF) · ±146 MB</span>
+          </a>
         </div>
+        <p class="dl-note"><a href="https://github.com/nxcodeobject/nxsocket/releases" target="_blank" rel="noopener" data-i18n="dl.note">Semua rilis ada di GitHub Releases →</a></p>
       </div>
     </section>
 
