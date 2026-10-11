@@ -62,10 +62,6 @@
             <a class="btn btn-ghost" href="#unduh" data-i18n="hero.cta3">Unduh binary</a>
             <a class="btn btn-ghost" href="#modul" data-i18n="hero.cta2">Lihat modul</a>
           </div>
-          <div class="install-box">
-            <code id="install-cmd">npm install &amp;&amp; npm run build &amp;&amp; npm link</code>
-            <button class="copy-btn" id="copy-install"><span data-i18n="install.copy">Copy</span></button>
-          </div>
           <p class="hero-note" data-i18n="hero.note">Lalu: nxsocket server — dan semua demo siap dibuka.</p>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -225,12 +221,13 @@
         <h2 data-i18n="st.title">Cara mulai</h2>
         <ol class="steps">
           <li>
-            <h3 data-i18n="st.1t">Pasang CLI</h3>
-            <pre><code>cd D:\Framework\CLI\NxSocket
-npm install
-npm run build
-npm link</code></pre>
-            <p class="step-alt" data-i18n-html="st.1a">Setelah mengubah kode, jalankan <code>npm run build</code> lagi.</p>
+            <h3 data-i18n="st.1t">Unduh binary</h3>
+            <pre><code># Windows
+nxsocket-win-x64.exe
+
+# Linux
+nxsocket-linux-x64</code></pre>
+            <p class="step-alt" data-i18n-html="st.1a">Tidak perlu Node.js. Unduh dari <a href="https://github.com/nxcodeobject/nxsocket/releases" target="_blank" rel="noopener">GitHub Releases</a>.</p>
           </li>
           <li>
             <h3 data-i18n="st.2t">Lihat endpoint &amp; token</h3>
@@ -246,7 +243,7 @@ nxsocket server --https   # mic & kamera di HP</code></pre>
           <li>
             <h3 data-i18n="st.4t">Buka demo</h3>
             <pre><code>http://127.0.0.1:7080/v1/demo</code></pre>
-            <p class="step-alt" data-i18n-html="st.4a">Atau uji semua modul dari CLI: <code>npm run example:demo</code>.</p>
+            <p class="step-alt" data-i18n-html="st.4a">Setiap demo punya halaman sendiri: <code>/v1/demo</code>, <code>/v1/demo2</code>, … <code>/v1/demo12</code>.</p>
           </li>
         </ol>
       </div>
@@ -340,7 +337,7 @@ nxsocket gateway token revoke &lt;id&gt;</code></pre>
         </details>
         <details>
           <summary data-i18n="faq.6q">Bisa diakses dari luar rumah?</summary>
-          <p data-i18n="faq.6a">Ya — lewat Cloudflare Tunnel (npm run tunnel), Tailscale, atau reverse proxy seperti Caddy/Nginx di depannya.</p>
+          <p data-i18n="faq.6a">Ya — lewat Cloudflare Tunnel, Tailscale, atau reverse proxy seperti Caddy/Nginx di depannya.</p>
         </details>
       </div>
     </section>

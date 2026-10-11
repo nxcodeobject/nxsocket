@@ -18,8 +18,6 @@ const I18N = {
     "hero.cta1": "Mulai dalam 15 menit",
     "hero.cta2": "Lihat modul",
     "hero.cta3": "Unduh binary",
-    "install.copy": "Copy",
-    "install.copied": "Tersalin ✓",
     "hero.note": "Lalu: nxsocket server — gateway dan semua modul siap dipakai.",
     "fit.title": "Kenapa NxSocket?",
     "fit.1t": "20+ modul siap pakai",
@@ -89,14 +87,14 @@ const I18N = {
     "arch.3": "Adapter SQLite / Firebase / JSON untuk penyimpanan",
     "arch.4": "Rate limit per koneksi (default 60 pesan / 10 detik)",
     "st.title": "Cara mulai",
-    "st.1t": "Pasang CLI",
-    "st.1a": "Setelah mengubah kode, jalankan <code>npm run build</code> lagi.",
+    "st.1t": "Unduh binary",
+    "st.1a": "Tidak perlu Node.js. Unduh dari <a href=\"https://github.com/nxcodeobject/nxsocket/releases\" target=\"_blank\" rel=\"noopener\">GitHub Releases</a>.",
     "st.2t": "Lihat endpoint & token",
     "st.2a": "Menampilkan URL lokal, URL jaringan, dan token gateway.",
     "st.3t": "Jalankan server",
     "st.3a": "Default: port 7080, path /v1, adapter SQLite.",
     "st.4t": "Buka demo",
-    "st.4a": "Atau uji semua modul dari CLI: <code>npm run example:demo</code>.",
+    "st.4a": "Setiap demo punya halaman sendiri: <code>/v1/demo</code>, <code>/v1/demo2</code>, … <code>/v1/demo12</code>.",
     "cl.title": "Client API",
     "cl.protoTitle": "Event protokol",
     "cl.protoNote": "Detail lengkap ada di PROTOCOL.md.",
@@ -115,7 +113,7 @@ const I18N = {
     "faq.5q": "Panggilan tersambung tapi tidak ada suara?",
     "faq.5a": "Pakai nxsocket server --https (bukan HTTP), izinkan mic di kedua perangkat, lalu ketuk tombol \"Aktifkan suara\" di halaman.",
     "faq.6q": "Bisa diakses dari luar rumah?",
-    "faq.6a": "Ya — lewat Cloudflare Tunnel (npm run tunnel), Tailscale, atau reverse proxy seperti Caddy/Nginx di depannya.",
+    "faq.6a": "Ya — lewat Cloudflare Tunnel, Tailscale, atau reverse proxy seperti Caddy/Nginx di depannya.",
     "foot.slogan": "Nusantara eXtreme Development Object Model",
     "foot.link1": "GitHub",
     "foot.link2": "Sponsor",
@@ -138,8 +136,6 @@ const I18N = {
     "hero.cta1": "Start in 15 minutes",
     "hero.cta2": "See modules",
     "hero.cta3": "Download binary",
-    "install.copy": "Copy",
-    "install.copied": "Copied ✓",
     "hero.note": "Then: nxsocket server — the gateway and every module ready to use.",
     "fit.title": "Why NxSocket?",
     "fit.1t": "20+ ready modules",
@@ -209,14 +205,14 @@ const I18N = {
     "arch.3": "SQLite / Firebase / JSON storage adapters",
     "arch.4": "Per-connection rate limit (default 60 messages / 10 seconds)",
     "st.title": "Get started",
-    "st.1t": "Install the CLI",
-    "st.1a": "After changing code, run <code>npm run build</code> again.",
+    "st.1t": "Download the binary",
+    "st.1a": "No Node.js needed. Download from <a href=\"https://github.com/nxcodeobject/nxsocket/releases\" target=\"_blank\" rel=\"noopener\">GitHub Releases</a>.",
     "st.2t": "Check endpoint & token",
     "st.2a": "Shows the local URL, network URL, and gateway token.",
     "st.3t": "Run the server",
     "st.3a": "Defaults: port 7080, path /v1, SQLite adapter.",
     "st.4t": "Open a demo",
-    "st.4a": "Or test every module from the CLI: <code>npm run example:demo</code>.",
+    "st.4a": "Each demo has its own page: <code>/v1/demo</code>, <code>/v1/demo2</code>, … <code>/v1/demo12</code>.",
     "cl.title": "Client API",
     "cl.protoTitle": "Protocol events",
     "cl.protoNote": "Full details live in PROTOCOL.md.",
@@ -235,7 +231,7 @@ const I18N = {
     "faq.5q": "Call connects but there's no audio?",
     "faq.5a": "Use nxsocket server --https (not HTTP), allow the mic on both devices, then tap the \"Enable audio\" button on the page.",
     "faq.6q": "Can it be reached from outside my home?",
-    "faq.6a": "Yes — via Cloudflare Tunnel (npm run tunnel), Tailscale, or a reverse proxy such as Caddy/Nginx in front of it.",
+    "faq.6a": "Yes — via Cloudflare Tunnel, Tailscale, or a reverse proxy such as Caddy/Nginx in front of it.",
     "foot.slogan": "Nusantara eXtreme Development Object Model",
     "foot.link1": "GitHub",
     "foot.link2": "Sponsor",
@@ -268,33 +264,6 @@ function setLang(lang) {
     });
   });
   if (dict["meta.title"]) document.title = dict["meta.title"];
-}
-
-// Salin perintah instalasi
-const copyBtn = document.getElementById("copy-install");
-const installCmd = document.getElementById("install-cmd");
-if (copyBtn && installCmd) {
-  const label = () => copyBtn.querySelector("span") || copyBtn;
-  copyBtn.addEventListener("click", async () => {
-    const text = installCmd.textContent.trim();
-    try {
-      await navigator.clipboard.writeText(text);
-    } catch {
-      const ta = document.createElement("textarea");
-      ta.value = text;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      ta.remove();
-    }
-    const lang = document.documentElement.lang === "en" ? "en" : "id";
-    label().textContent = I18N[lang]["install.copied"];
-    copyBtn.classList.add("done");
-    setTimeout(() => {
-      label().textContent = I18N[lang]["install.copy"];
-      copyBtn.classList.remove("done");
-    }, 1800);
-  });
 }
 
 document.addEventListener("DOMContentLoaded", () => {

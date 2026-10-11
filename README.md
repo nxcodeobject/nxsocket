@@ -15,19 +15,19 @@ Landing page promosi **NxSocket** (CLI + platform WebSocket untuk fitur realtime
 ```
 index.html   landing page (hero, fitur, modul, arsitektur, demo, unduh, cara mulai, FAQ)
 style.css    tema gelap + aksen hijau NxSocket, responsif (grid demo .dm-grid + kartu unduh .dl-grid)
-index.js     i18n ID/EN (localStorage + deteksi bahasa browser), tombol copy
+index.js     i18n ID/EN (localStorage + deteksi bahasa browser)
 logo.svg     logo (salinan dari public/icons/nxsocket.svg)
 ```
 
 ## Isi halaman
 
-1. Hero — tagline + mockup terminal (`gateway info`, `server`) + copy perintah
+1. Hero — tagline + mockup terminal (`gateway info`, `server`)
 2. Kenapa NxSocket — 6 kartu (modul, gateway token, reconnect/resume, adapter, suara-video, uji dari HP)
 3. Modul — chip 21 modul (chat, presence, WebRTC, meeting, SFU, AI, OTP, FCM, …)
 4. Arsitektur — alur Client → Gateway → Server + diagram
 5. Demo browser — 14 tautan ke `http://127.0.0.1:7080` (`/v1/demo` … `/v1/demo12`, `/v1/otp`, `/v1/qr`)
 6. Unduh NxSocket — 2 kartu binary standalone (Windows `.exe` + Linux x64) dari GitHub Releases + catatan cara pakai (jalan tanpa Node.js, `.env` opsional di folder kerja) + tautan semua rilis
-7. Cara mulai — 4 langkah (install/build/link → gateway info → server → buka demo)
+7. Cara mulai — 4 langkah (unduh binary → gateway info → server → buka demo)
 8. Client API + tabel event protokol
 9. Perintah CLI (server & gateway/token)
 10. FAQ — 6 pertanyaan umum + troubleshooting
@@ -57,3 +57,7 @@ logo.svg     logo (salinan dari public/icons/nxsocket.svg)
 - **GitHub Pages diaktifkan** (branch `main`, path `/`) → live di
   https://nxcodeobject.github.io/nxsocket/ ; ditambahkan `link rel=canonical` +
   `og:url` di `index.html` dan URL live dicatat di README ini. ✅ SUDAH DIEKSEKUSI
+- **Menghapus informasi khusus developer** dari halaman (pengunjung bukan pengguna
+  dev): membuang `install-box` (`npm install && npm run build && npm link`) di hero
+  beserta tombol copy-nya, mengganti langkah "Pasang CLI" menjadi "Unduh binary", dan
+  menghapus `npm run example:demo` / `npm run tunnel` dari teks. ✅ SUDAH DIEKSEKUSI
